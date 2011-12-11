@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.35.14-ck1
- * Sat Nov 26 19:52:48 2011
+ * Sat Nov 26 22:58:11 2011
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_IP6_NF_MATCH_AH 1
@@ -208,6 +208,7 @@
 #define CONFIG_IPV6_SIT 1
 #define CONFIG_XFRM 1
 #define CONFIG_DEFCONFIG_LIST "/lib/modules/$UNAME_RELEASE/.config"
+#define CONFIG_SCHED_BFS 1
 #define CONFIG_IPV6_MULTIPLE_TABLES 1
 #define CONFIG_FB_S3C_TL2796 1
 #define CONFIG_IP_NF_TARGET_MASQUERADE 1
@@ -535,7 +536,7 @@
 #define CONFIG_DEBUG_KERNEL 1
 #define CONFIG_FB_S3C 1
 #define CONFIG_COMPAT_BRK 1
-#define CONFIG_LOCALVERSION "-cfs"
+#define CONFIG_LOCALVERSION "-bfs"
 #define CONFIG_RADIO_ADAPTERS 1
 #define CONFIG_CRYPTO 1
 #define CONFIG_SCHED_DEBUG 1
