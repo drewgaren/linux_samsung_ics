@@ -331,9 +331,10 @@ static void p54p_tx(struct ieee80211_hw *dev, struct sk_buff *skb)
 	struct p54p_ring_control *ring_control = priv->ring_control;
 	struct p54p_desc *desc;
 	dma_addr_t mapping;
-	u32 idx, i;
+	u32 device_idx, idx, i;
 
 	spin_lock_irqsave(&priv->lock, flags);
+	device_idx = le32_to_cpu(ring_control->device_idx[1]);
 	idx = le32_to_cpu(ring_control->host_idx[1]);
 	i = idx % ARRAY_SIZE(ring_control->tx_data);
 
@@ -469,7 +470,8 @@ static int p54p_open(struct ieee80211_hw *dev)
 	P54P_READ(dev_int);
 
 	if (!wait_for_completion_interruptible_timeout(&priv->boot_comp, HZ)) {
-		wiphy_err(dev->wiphy, "Cannot boot firmware!\n");
+		printk(KERN_ERR "%s: Cannot boot firmware!\n",
+		       wiphy_name(dev->wiphy));
 		p54p_stop(dev);
 		return -ETIMEDOUT;
 	}
