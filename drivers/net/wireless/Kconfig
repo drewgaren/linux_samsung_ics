@@ -268,10 +268,6 @@ config MWL8K
 	  To compile this driver as a module, choose M here: the module
 	  will be called mwl8k.  If unsure, say N.
 
-config BCM4329_PURE_ANDROID
-        bool "PURE ANDROID BCM4329 implementation"
-        default y
-
 config WIFI_CONTROL_FUNC
 	bool "Enable WiFi control function abstraction"
 	help
